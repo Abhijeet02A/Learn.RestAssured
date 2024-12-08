@@ -1,5 +1,6 @@
 #maven's target directory
 /target/
+/test-output/
 
 #Maven log's
 .log
