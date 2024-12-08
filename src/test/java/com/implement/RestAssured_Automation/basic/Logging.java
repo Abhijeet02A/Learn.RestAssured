@@ -14,12 +14,12 @@ public class Logging {
 	@Test
 	public void blackListHeader() {
 		given().
-		baseUri("https://reqres.in/")
-		.config(config().logConfig(LogConfig.logConfig().blacklistHeader("Accept")))
-		.log().all()
-	.when()
-		.get("api/unknown").
-	then();		
+			baseUri("https://reqres.in/")
+			.config(config().logConfig(LogConfig.logConfig().blacklistHeader("Accept")))
+			.log().all()
+		.when()
+			.get("api/unknown").
+		then();		
 	}
 
 	@Test
