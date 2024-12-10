@@ -1,4 +1,4 @@
-package com.implement.RestAssured_Automation.basic;
+package com.implement.RestAssured_Automation.basic.get;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
