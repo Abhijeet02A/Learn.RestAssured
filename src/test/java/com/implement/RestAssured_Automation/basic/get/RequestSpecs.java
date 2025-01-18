@@ -2,13 +2,12 @@ package com.implement.RestAssured_Automation.basic.get;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.with;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItems;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 public class RequestSpecs {

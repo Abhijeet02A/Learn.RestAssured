@@ -10,7 +10,6 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.response.Response;
 import io.restassured.specification.QueryableRequestSpecification;
-import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.SpecificationQuerier;
 
 public class ReqSpecificationBuilder {

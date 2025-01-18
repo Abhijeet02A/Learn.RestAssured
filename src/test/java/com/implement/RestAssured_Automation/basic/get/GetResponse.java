@@ -1,8 +1,8 @@
 package com.implement.RestAssured_Automation.basic.get;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
-import static org.testng.Assert.assertEquals;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItems;
 
 import org.testng.annotations.Test;
 
