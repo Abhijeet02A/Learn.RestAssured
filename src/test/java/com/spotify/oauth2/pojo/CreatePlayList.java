@@ -1,20 +1,23 @@
 package com.spotify.oauth2.pojo;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
-import javax.annotation.processing.Generated;
-
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import lombok.Getter;
+import lombok.Setter;
+
+/**
+ * TODO: How to use Builder annotation in eclipse IDE 
+ * or How you can use same project in both eclipse and intelij IDE
+ */
+// ow to 
+//@Value	//can remove the access specifier and does work of getter and setter
+//@Data	//Does work of getter and setter
+@Getter @Setter
+//NOTE: will use below annotations for using the POJO as a builder pattern
+//@Jacksonized
+//@Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "name", "description", "public" })
-@Generated("jsonschema2pojo")
 public class CreatePlayList {
 
 	@JsonProperty("name")
@@ -23,47 +26,32 @@ public class CreatePlayList {
 	private String description;
 	@JsonProperty("public")
 	private Boolean _public;
-	@JsonIgnore
-	private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
-
-	@JsonProperty("name")
-	public String getName() {
-		return name;
-	}
-
-	@JsonProperty("name")
-	public void setName(String name) {
+	
+	public CreatePlayList(String name, String description, Boolean _public) {
+		super();
 		this.name = name;
-	}
-
-	@JsonProperty("description")
-	public String getDescription() {
-		return description;
-	}
-
-	@JsonProperty("description")
-	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	@JsonProperty("public")
-	public Boolean getPublic() {
-		return _public;
-	}
-
-	@JsonProperty("public")
-	public void setPublic(Boolean _public) {
 		this._public = _public;
 	}
 
-	@JsonAnyGetter
-	public Map<String, Object> getAdditionalProperties() {
-		return this.additionalProperties;
+	public CreatePlayList() {
+		// TODO Auto-generated constructor stub
 	}
-
-	@JsonAnySetter
-	public void setAdditionalProperty(String name, Object value) {
-		this.additionalProperties.put(name, value);
+	
+	public CreatePlayList setName(String name) {
+		this.name = name;
+		return this;
 	}
-
+	
+	public CreatePlayList setDescription(String description) {
+		this.description = description;
+		return this;
+	}
+	
+	public CreatePlayList setPublic(Boolean _public) {
+		this._public = _public;
+		return this;
+	}
+	
+	
 }
