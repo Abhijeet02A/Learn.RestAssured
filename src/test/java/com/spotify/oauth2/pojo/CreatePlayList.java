@@ -3,8 +3,10 @@ package com.spotify.oauth2.pojo;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.jackson.Jacksonized;
 
 /**
  * TODO: How to use Builder annotation in eclipse IDE 
@@ -15,8 +17,8 @@ import lombok.Setter;
 //@Data	//Does work of getter and setter
 @Getter @Setter
 //NOTE: will use below annotations for using the POJO as a builder pattern
-//@Jacksonized
-//@Builder
+@Jacksonized
+@Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CreatePlayList {
 

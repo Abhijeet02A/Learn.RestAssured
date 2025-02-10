@@ -18,6 +18,7 @@
 		<junit.version>5.11.0</junit.version>
 		<jackson.core.ver>2.18.2</jackson.core.ver>
 		<lombok.vers>1.18.36</lombok.vers>
+		<aspectj.version>1.9.22.1</aspectj.version>
 	</properties>
 
 	<dependencyManagement>
@@ -91,6 +92,14 @@
 			<version>7.10.2</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -103,41 +112,42 @@
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>3.4.0</version>
 				</plugin>
-				<!-- default lifecycle, jar packaging: see
-				https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
-				<plugin>
-					<artifactId>maven-resources-plugin</artifactId>
-					<version>3.3.1</version>
-				</plugin>
+
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.13.0</version>
 				</plugin>
+<!--				<plugin>-->
+<!--					<groupId>org.apache.maven.plugins</groupId>-->
+<!--					<artifactId>maven-surefire-plugin</artifactId>-->
+<!--					<version>3.4.0</version>-->
+<!--					<configuration>-->
+<!--						<parallel>methods</parallel>-->
+<!--						<threadCount>7</threadCount>-->
+<!--						<argLine>-->
+<!--							-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"-->
+<!--						</argLine>-->
+<!--					</configuration>-->
+<!--					<dependencies>-->
+<!--						<dependency>-->
+<!--							<groupId>org.aspectj</groupId>-->
+<!--							<artifactId>aspectjweaver</artifactId>-->
+<!--							<version>${aspectj.version}</version>-->
+<!--						</dependency>-->
+<!--					</dependencies>-->
+<!--				</plugin>-->
+
 				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.3.0</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.4.2</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-install-plugin</artifactId>
-					<version>3.1.2</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-deploy-plugin</artifactId>
-					<version>3.1.2</version>
-				</plugin>
-				<!-- site lifecycle, see
-				https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
-				<plugin>
-					<artifactId>maven-site-plugin</artifactId>
-					<version>3.12.1</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-project-info-reports-plugin</artifactId>
-					<version>3.6.1</version>
+					<version>3.5.2</version>
+					<configuration>
+						<includes>
+							<include>**/tests/*.java</include>
+						</includes>
+						<parallel>methods</parallel>
+						<threadCount>10</threadCount>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
