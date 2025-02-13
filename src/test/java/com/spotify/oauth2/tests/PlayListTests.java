@@ -13,7 +13,7 @@ import com.spotify.oauth2.pojo.CreatePlayList;
 
 import io.restassured.response.Response;
 
-public class PlayListTests {
+public class PlayListTests extends BaseTest {
 
 	@Test
 	public void createPlayList() {

@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 
-public class GetUserProfile {
+public class GetUserProfileTest extends BaseTest {
 	
 	@Test
 	public void getUserProfile() {
