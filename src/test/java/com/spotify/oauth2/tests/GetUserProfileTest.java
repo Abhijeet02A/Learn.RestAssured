@@ -12,5 +12,7 @@ public class GetUserProfileTest extends BaseTest {
 	public void getUserProfile() {
 		Response response = requestGet("/me");
 		System.out.println(response.body().asPrettyString());
+
+		//TODO: Add Assertions 
 	}
 }
