@@ -26,5 +26,8 @@ public class PlayListTests extends BaseTest {
 		
 		Response response = requestPost(USERS + "/31mt7d2uji4uk5f6f5wgy53fswzu" + PLAYLISTS, bodyOfPlayList);
 		response.statusCode();
+
+		//TODO:
+		//Check for assertions also also
 	}
 }
